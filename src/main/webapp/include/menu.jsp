@@ -11,7 +11,7 @@
                 <a class="nav-link" href="${pageContext.request.contextPath}/add-article.jsp">Dodaj artykuł <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/sign-in.jsp">Zaloguj się</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
