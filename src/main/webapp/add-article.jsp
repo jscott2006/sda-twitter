@@ -6,7 +6,7 @@
 </head>
 <body>
 <jsp:include page="include/menu.jsp"/>
-<div class="container mt-xl-5">
+<div class="container mt-5 pt-5">
     <div class="row text-center">
         <div class="col-md-8 m-auto text-left">
             <h4>Dodaj nowy wpis</h4>

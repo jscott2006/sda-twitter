@@ -20,7 +20,7 @@
 
 <jsp:include page="include/menu.jsp"/>
 
-<main id="middle" class="container">
+<main id="middle" class="container mt-5 pt-5">
     <div class="jumbotron">
         <div class="container">
             <h1 class="display-3">Hello, world!</h1>
