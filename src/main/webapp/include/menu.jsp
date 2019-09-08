@@ -1,4 +1,7 @@
+<%@ page import="pl.sda.twitter.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp">Tweet</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +14,15 @@
                 <a class="nav-link" href="${pageContext.request.contextPath}/add-article.jsp">Dodaj artykuł <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/sign-in.jsp">Zaloguj się</a>
+                <% User user = (User) session.getAttribute("user"); %>
+                <c:choose>
+                    <c:when test="${sessionScope.user.getUserName() !=null}">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/logout.jsp">Wyloguj się</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/sign-in.jsp">Zaloguj się</a>
+                    </c:otherwise>
+                </c:choose>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
