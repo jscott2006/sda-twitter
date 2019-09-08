@@ -17,7 +17,7 @@
                 <% User user = (User) session.getAttribute("user"); %>
                 <c:choose>
                     <c:when test="${sessionScope.user.getUserName() !=null}">
-                        <a id="loginLink" class="nav-link" href="${pageContext.request.contextPath}/logout.jsp">Wyloguj się</a>
+                        <a id="loginLink" class="nav-link" href="${pageContext.request.contextPath}/logout">Wyloguj się</a>
                     </c:when>
                     <c:otherwise>
                         <a id="loginLink" class="nav-link" href="${pageContext.request.contextPath}/sign-in.jsp">Zaloguj się</a>

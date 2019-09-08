@@ -44,6 +44,12 @@ public class SeleniumTests {
         assertEquals("http://localhost:8080/index.jsp", currentUrl);
         String returnedLinkText = driver.findElement(By.id("loginLink")).getText();
         assertEquals("Wyloguj się", returnedLinkText);
+        driver.findElement(By.id("loginLink")).click();//wylogowanie
+
+        currentUrl = driver.getCurrentUrl();
+        assertEquals("http://localhost:8080/index.jsp", currentUrl);
+        returnedLinkText = driver.findElement(By.id("loginLink")).getText();
+        assertEquals("Zaloguj się", returnedLinkText);
     }
 
     @After
