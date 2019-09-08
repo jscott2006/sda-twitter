@@ -1,4 +1,4 @@
-<%@ page import="pl.sda.twitter.model.User" %>
+<%@ page import="pl.sda.twitter.model.TbUser" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -14,7 +14,6 @@
                 <a class="nav-link" href="${pageContext.request.contextPath}/add-article.jsp">Dodaj artykuł <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <% User user = (User) session.getAttribute("user"); %>
                 <c:choose>
                     <c:when test="${sessionScope.user.getUserName() !=null}">
                         <a id="loginLink" class="nav-link" href="${pageContext.request.contextPath}/logout">Wyloguj się</a>
