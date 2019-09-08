@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 public class SeleniumTests {
@@ -39,6 +40,10 @@ public class SeleniumTests {
         driver.findElement(By.id("inputPassword")).clear();
         driver.findElement(By.id("inputPassword")).sendKeys("password");
         driver.findElement(By.id("loginButton")).click();
+        String currentUrl = driver.getCurrentUrl();
+        assertEquals("http://localhost:8080/index.jsp", currentUrl);
+        String returnedLinkText = driver.findElement(By.id("loginLink")).getText();
+        assertEquals("Wyloguj się", returnedLinkText);
     }
 
     @After
